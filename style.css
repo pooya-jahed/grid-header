@@ -1,0 +1,113 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.container {
+  background-color: rgb(134, 7, 7);
+  height: 100vh;
+}
+
+.header {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 100vh;
+}
+.gray-color {
+  background-color: rgba(34, 32, 32, 0.877);
+  grid-column: 1/7;
+  z-index: 1;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+}
+.text {
+  z-index: 2;
+  position: absolute;
+  text-align: center;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 44px;
+  top: 38%;
+  right: 50%;
+  transform: translate(50%, 38%);
+
+  letter-spacing: 2.5px;
+  background: linear-gradient(to right, #ff7301e3 53%, #fffffff5 30%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.left {
+  background-color: green;
+  grid-column: 1/4;
+  background-image: url("/multimedia/right.jpg");
+  background-position: center;
+  background-size: cover;
+}
+.right {
+  background-image: url("/multimedia/left.jpg");
+  grid-column: 4/7;
+  background-position: center;
+  background-size: cover;
+  background-color: rgb(36, 35, 33);
+}
+.btn {
+  background-color: rgba(8, 92, 202, 0.712);
+  color: aliceblue;
+  grid-column: 3/4;
+  grid-row: 4/5;
+  font-family: "Zeyada", cursive;
+  align-self: center;
+  padding: 3px;
+  border-radius: 3px;
+  font-size: 16px;
+  transition: all 0.4s;
+}
+.btn:hover {
+  background-color: rgb(18, 0, 175);
+  color: rgba(255, 255, 255, 0.712);
+}
+.welcome {
+  color: aliceblue;
+  grid-column: 3/4;
+  grid-row: 2/3;
+  font-family: "Zeyada", cursive;
+  font-size: 34px;
+}
+.paragraph {
+  color: aliceblue;
+  grid-column: 3/5;
+  grid-row: 3/4;
+  font-family: "Zeyada", cursive;
+  font-size: 16px;
+}
+@media only screen and (max-width: 853px) {
+  .right {
+    grid-column: -1/-1;
+
+    background-image: url("/multimedia/left.jpg");
+    background-position: center;
+    background-size: cover;
+    background-color: rgba(27, 27, 26, 0.498);
+  }
+  .left {
+    display: none;
+  }
+  .text {
+    width: 100%;
+    font-size: 35px;
+    top: 5%;
+  }
+  .gray-color {
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+  }
+  .welcome {
+    margin-top: 90px;
+  }
+  .welcome,
+  .paragraph,
+  .btn {
+    grid-column: 2/4;
+  }
+}
